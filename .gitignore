@@ -32,3 +32,9 @@ debug
 .container-*
 .vimrc
 .go
+
+# Credentials
+*credentials-ark
+
+# IDE
+.vscode/

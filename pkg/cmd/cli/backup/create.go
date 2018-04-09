@@ -64,6 +64,7 @@ type CreateOptions struct {
 	Labels                  flag.Map
 	Selector                flag.LabelSelector
 	IncludeClusterResources flag.OptionalBool
+	Format                  string
 }
 
 func NewCreateOptions() *CreateOptions {
@@ -73,6 +74,7 @@ func NewCreateOptions() *CreateOptions {
 		Labels:                  flag.NewMap(),
 		SnapshotVolumes:         flag.NewOptionalBool(nil),
 		IncludeClusterResources: flag.NewOptionalBool(nil),
+		Format:                  "json",
 	}
 }
 
@@ -127,6 +129,7 @@ func (o *CreateOptions) Run(c *cobra.Command, f client.Factory) error {
 			SnapshotVolumes:    o.SnapshotVolumes.Value,
 			TTL:                metav1.Duration{Duration: o.TTL},
 			IncludeClusterResources: o.IncludeClusterResources.Value,
+			Format:                  o.Format,
 		},
 	}
 

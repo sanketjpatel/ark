@@ -56,6 +56,9 @@ type BackupSpec struct {
 
 	// Hooks represent custom behaviors that should be executed at different phases of the backup.
 	Hooks BackupHooks `json:"hooks"`
+
+	// Format
+	Format string `json:"json"`
 }
 
 // BackupHooks contains custom behaviors that should be executed at different phases of the backup.
